@@ -1,0 +1,45 @@
+<html >
+<head >
+<title > html practice 1 for application form </title>
+<style type ="text/css">
+td{
+font-size:26px;
+color:white;
+}
+
+input,textarea,select{
+font-size:26px;
+color:white;
+background-color:brown;
+}
+</style>
+</head>
+
+
+<body>
+<form>
+<table width="640" border="5" bordercolor="yellow" align="center" cellapddin="12" bgcolor="green">
+
+<tr>
+<td> User Name: </td>
+<td> <input type = "text" value = "enter user name" size = "18" maxlength ="12"</td>
+</tr>
+<tr>
+<td> Password: </td>
+<td> <input type = "password" value = "enter password" size = "18" maxlength ="12"</td>
+</tr>
+<tr>
+<td> Address: </td>
+<td> <textarea rows = "5" cols="12"</td>
+
+
+
+</tr>
+
+
+
+
+</table>
+</form>
+</body>
+</html>

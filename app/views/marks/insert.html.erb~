@@ -1,0 +1,51 @@
+
+<%= form_for @marks, :url => "insert_marks" do |f| %>
+
+
+
+<div align="left">
+  <%= f.label :student%>
+  <%= f.select :cstudents_id, Cstudent.all.collect{|c| [c.fname, c.id]} %> 
+   </div>
+
+<div align="left">
+  <%= f.label :examtype %>:
+  <%= f.select :examtypes_id, Examtype.all.collect{|e| [e.exname, e.id]} %> 
+</div>
+
+<div align="center">
+<table>
+  <tr align="center">
+  <td>
+  <%= f.label :telugu %>:
+  <%= f.text_field :marks %>
+  <%#= f.select :subject_id, Subject.all.collect{|s| [s.subjectname, s.id]} %>  
+  </td>
+  
+  <tr align="center">
+  <td>
+  <%= f.label :english %>:  
+  <%= f.text_field :marks %> 
+  </td>
+  
+  <tr align="center">
+  <td >
+  <%= f.label :maths  %>: 
+  
+  <%= f.text_field :marks %> 
+  </td>
+  
+   <tr align="center">
+  <td>
+  <%= f.label :science %>: 
+  <%= f.text_field :marks %>
+  </td>
+  
+</table>
+  <%= f.submit %>
+<% end %>
+
+
+
+
+

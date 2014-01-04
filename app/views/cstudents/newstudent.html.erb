@@ -1,0 +1,125 @@
+<% content_for :title do %>
+NEW STUDENT
+<%end%>
+
+
+<%= form_for @student, :url => "addstudent" do |f| %>
+
+<div>
+  <%= f.label :fname %>
+  <%= f.text_field :fname %>  
+</div>
+<div>
+  <%= f.label :lname %>
+  <%= f.text_field :lname %>  
+</div style= "">
+<br>
+  <%= f.label :username %>
+  <%= f.text_field :username %>  
+</br>
+<div>
+  <%= f.label :username_confirmation %>
+  <%= f.text_field :username_confirmation %>  
+</div>
+<div>
+  <%= f.label :Age%>
+  <%= f.text_field :age, :maxlength=> 2  %>  
+</div>
+<div>
+  <%= f.label :"Date of Join" %>
+  <%= f.date_field :doj %> 
+   
+     
+</div>
+<div>
+  <%= f.label :phone %>
+  <%= f.text_field :phone %>  	
+</div>
+<div>
+	<%= f.label :gender %>
+  <%= f.radio_button :gender, 'm' %>  
+  <%= f.label :male %>
+  <%= f.radio_button :gender, 'f' %>  
+  <%= f.label :female %>
+</div>
+<div >
+
+  <%= f.label :hobbies, 'hobbies' %>:
+  <%= f.check_box :hobbies, {:multiple => true}, "swimming", nil%>Swimming 
+  <%= f.check_box :hobbies, {:multiple => true}, "cricket", nil%>Cricket
+  <%= f.check_box :hobbies, {:multiple => true}, "football", nil %>Football
+  
+   <br />
+</div>
+
+<div>
+  <%= f.label :qualifications %>:
+  <%= f.select :qualifications_id, Qualification.all.collect {|p| [ p.qname, p.id ] } %>
+    
+</div>
+
+<div>
+  <%= f.label :locations %>:
+  <%= f.select :locations_id, Locations.all.collect {|l| [ l.locname, l.id ] } %>
+    
+</div>
+
+
+
+
+
+<div>
+	
+<%= f.label :paid, 'Fee Details' %>:
+ <%= f.check_box :paid %> paid
+ <%= f.check_box :paid %> yet to pay
+</div>
+ <%= f.submit %>
+<%end%>
+-------------------------------------------------------
+<div>
+#using form tags
+
+
+<%= form_tag  do %>
+<%= label_tag  :password_tag %>
+<%= password_field_tag :pass %>
+<br>
+<%= label_tag  :Email_tag %>
+<%= email_field_tag :email, placeholder ='enter email address', :required => 'required'  %>
+<br>
+
+<%= label_tag  :Phonenumber_tag %>
+<%= number_field_tag :Phonenumber %>
+<br>
+
+<%= label_tag  :'selectmethod1' %>
+<%= select_tag "count", options_for_select([ "VISA", "MasterCard" ], " "), include_blank: true %>
+
+<br />
+<%= label_tag  :'selectmethod2' %>
+<%= select_tag "count1", "<option> INDIA </option> <option> pakisthan </option> <option>burma</option><option>itally</option>".html_safe, multiple: true, include_blank: true %> 
+
+
+
+
+
+<br>
+
+<%= label_tag  :'Check out' %>
+<%= button_tag :Checkout %>
+
+<br>
+
+<%= params.inspect if params[:Phonenumber] != nil  %> 
+
+
+<% end %>
+
+</div>
+
+
+
+
+
+

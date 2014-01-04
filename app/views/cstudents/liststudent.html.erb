@@ -1,0 +1,53 @@
+
+<h1 align="center">Collage students List</h1>
+<table bgcolor="gray" border="2px" >
+	<th>Full Name</th>
+	<th>Date of Join</th>
+	<th>Age</th>
+	<th>Qualification</th>
+	<th>Location</th>
+	<th>Email</th>
+	<th>Details</th>
+	<th>Delete Details</th>
+		
+	<% count = 0 %>
+	<% @student.each do |student| %>
+	<% count = count + 1 %>
+			
+	<tr %>
+	  <td><%= truncate(student.fullname,length: 10) %></td>
+	  <td><%= student.doj%></td>
+	  <td><%= student.age %></td>
+     	  
+	  <% unless student.qualifications_id.nil? %> 
+          <td><%= student.qualifications_name %></td>
+          <% else %>
+          <td>Not Available</td>
+          <% end %>
+	  
+	  <% unless student.locations_id.nil? %> 	
+          <td><%= student.locations_name %></td>
+          <% else %>
+          <td>Not Available</td>
+          <% end %>
+
+          <% unless student.email.nil? %> 
+          <td><%= student.email %></td>
+          <% else %>
+          <td>Not Available</td>
+          <% end %>
+	  
+	  
+	  <td><%= link_to 'View Details', :controller=> :cstudents,
+	  :action => :view_details, :id => student.id %></td>
+	  
+	  <td><%= link_to 'Delete Details', :controller=> :cstudents,
+	  :action => :edit_details, :id => student.id %></td>
+	  
+<tr %>
+	<% end %>
+	
+	
+</table>
+
+<%= paginate @student %>

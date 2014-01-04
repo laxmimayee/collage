@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  marks: 1
+  subjects_id: 1
+  cstudents_id: 1
+  examtypes_id: 1
+
+two:
+  marks: 1
+  subjects_id: 1
+  cstudents_id: 1
+  examtypes_id: 1

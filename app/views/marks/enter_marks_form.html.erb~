@@ -1,0 +1,64 @@
+<%= display_error_messages(@marks) %>
+<%= display_flash_messages %>
+
+<%= form_for @marks, :url => "insert_marks" do |f| %>
+
+
+ <div>
+  <%= f.label :student%>
+  <%= f.select :student_id, Student.all.collect{|s| [s.fullname, s.id]} %> 
+   </div>
+  
+
+<div>
+  <%= f.label :examtype %>:
+  <%= f.select :examtype_id, Examtype.all.collect{|e| [e.examname, e.id]} %> 
+</div>
+
+
+<div>
+<table>
+  <tr>
+  <td>
+  <%= f.label :telugu %>:
+  <%#= f.select :subject_id, Subject.all.collect{|s| [s.subjectname, s.id]} %>  
+  </td>
+  <td>
+  
+  <%= f.text_field :marks %>  
+</td>
+
+  <tr>
+  <td>
+  <%= f.label :english %>:  
+  </td>
+  <td>
+  <%#= f.label :marks %>:
+  <%= f.text_field :marks %>  
+</td>
+
+  <tr>
+  <td>
+  <%= f.label :math %>: 
+  </td>
+  <td>
+  <%#= f.label :marks %>:
+  <%= f.text_field :marks %>  
+</td>
+ </tr>
+
+  <tr>
+  <td>
+  <%= f.label :science %>: 
+  </td>
+  <td>
+  <%#= f.label :marks %>:
+  <%= f.text_field :marks %>  
+</td>
+</table>
+  <%= f.submit %>
+<% end %>
+
+
+
+

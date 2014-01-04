@@ -1,0 +1,38 @@
+<% content_for :title do %>
+Student Login
+<%end%>
+
+<%=form_for @student, :url => "login" do |f| %>
+<div >
+	<%= f.label :username %>:
+
+	<%= f.text_field :username %>
+
+</div>
+
+<br>
+
+<div>
+	<%= f.label :Password %>:
+	<%= f.password_field :password %>
+
+</div>
+<br>
+
+<br>
+<div>
+	<%= link_to 'For Got Password',:controller=> :cstudents, :action=> :forgotpwd%>
+
+	<br>
+	<br>
+	<%= link_to 'Create New Student account',:controller=> :cstudents, :action=> :newstudent%>
+</div>
+
+<br>
+<br>
+
+<%= f.submit "Log IN" %>
+<%end%>
+
+
+

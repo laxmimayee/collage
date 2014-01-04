@@ -1,0 +1,7 @@
+<%= display_error_messages(@student) %>
+
+
+<%= flash[:message] = "#{@student.fullname} is sucessfully created" %>
+
+<br>
+<%= link_to 'Back',:controller=> :cstudents, :action=> :newstudent%>

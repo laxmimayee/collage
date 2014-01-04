@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+  <title>Collage:  <%= yield :title %>  </title>
+  <%= stylesheet_link_tag    "application", media: "screen" %>
+  <%= stylesheet_link_tag    "print", media: "print" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+  
+  <!--[if IE]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+</head>
+<body>
+	<div id="wrapper"><!-- #wrapper -->
+	
+	
+
+	<header><!-- header -->
+		<div id="headerlogo" ><%= image_tag "logo-new.jpg", :alt => "test",:size => "940x50", :mouseover => image_path("colbg.png") %></div><br>
+		<h1 align="left">CollageApplication </h1>
+		<h2 align="left">Krishna's educational institute's  </h2>
+		
+	</header><!-- end of header -->
+	
+	<nav><!-- top nav -->
+		
+		<%= render partial: "shared/navigation" %>
+		</div>
+		
+	</nav><!-- end of top nav -->
+	
+	
+	
+	<section id="main"><!-- #main content and sidebar area -->
+		
+
+		<section id="content"><!-- #content -->
+			
+        		
+							<h2 align="middle"><%= yield :title %>  </h2>
+							<div align="middle">
+							<%= yield %>
+							</div>
+							<img src="images/applepie.jpg" alt="" width="200" height="200" class="alignleft" >
+							
+							
+				
+						
+			</section><!-- end of #content -->
+			
+		
+
+		<aside id="sidebar"><!-- sidebar -->
+				<h3>Data Services</h3>
+					<ul>
+			
+			<li><%= link_to_unless_current  'newstudent',:controller=> :cstudents, :action=> :newstudent%></li>
+			<li><%= link_to_unless_current  'listtudent',:controller=> :cstudents, :action=> :liststudent%></li>
+			<li><%= link_to_unless_current  'viewdetails',:controller=> :cstudents, :action=> :liststudent%></li>
+			<li><%= link_to_unless_current  'enterMarks',:controller=> :marks, :action=> :enter_marks_form%></li>
+			<li><%= link_to_unless_current  "login", :controller=> :cstudents, :action=> :studentlogin%></li>
+			
+					</ul>
+					
+				<h3>Sponsors</h3>
+					<%= image_tag "ad125.jpg" %><br /><%= image_tag "ad125.jpg" %><br /><br />
+
+				<h3>Connect With Us</h3>
+					<ul>
+						<li><a href="#">Twitter</a></li>
+						<li><a href="#">Facebook</a></li>
+					</ul>
+
+		</aside><!-- end of sidebar -->
+
+
+
+	</section><!-- end of #main content and sidebar-->
+	
+		<footer>
+		<section id="footer-area">
+
+			<section id="footer-outer-block">
+					<aside class="footer-segment">
+							<h4>Friends</h4>
+								<ul>
+									<li><a href="#">one linkylink</a></li>
+									<li><a href="#">two linkylinks</a></li>
+									<li><a href="#">three linkylinks</a></li>
+								</ul>
+					</aside><!-- end of #first footer segment -->
+
+					<aside class="footer-segment">
+							<h4>Awesome Stuff</h4>
+								<ul>
+									<li><a href="#">one linkylink</a></li>
+									<li><a href="#">two linkylinks</a></li>
+									<li><a href="#">three linkylinks</a></li>
+								</ul>
+					</aside><!-- end of #second footer segment -->
+
+					<aside class="footer-segment">
+							<h4>Coolness</h4>
+								<ul>
+									<li><a href="#">one linkylink</a></li>
+									<li><a href="#">two linkylinks</a></li>
+									<li><a href="#">three linkylinks</a></li>
+								</ul>
+					</aside><!-- end of #third footer segment -->
+					
+					<aside class="footer-segment">
+							<h4>Blahdyblah</h4>
+								<p>&copy; 2010 <a href="#">yoursite.com</a> Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. </p>
+					</aside><!-- end of #fourth footer segment -->
+
+			</section><!-- end of footer-outer-block -->
+
+		</section><!-- end of footer-area -->
+	</footer>
+	
+</div><!-- #wrapper -->
+<!-- Free template created by http://freehtml5templates.com -->
+	
+
+
+
+</body>
+</html>

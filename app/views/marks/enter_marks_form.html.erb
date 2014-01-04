@@ -1,0 +1,53 @@
+<% content_for :title do %>
+Enter Students marks
+<%end%>
+
+
+<%= form_for @marks, :url => "insert_marks" do |f| %>
+
+
+
+<div align="left">
+  <%= f.label :student%>
+  <%= f.select :cstudents_id, Cstudent.all.collect{|c| [c.fullname, c.id]} %> 
+   </div>
+
+<div align="left">
+  <%= f.label :examtype %>:
+  <%= f.select :examtypes_id, Examtype.all.collect{|e| [e.exname, e.id]} %> 
+</div>
+
+<div align="left">
+  <%= f.label :subject %>:
+  <%= f.select :subjects_id, Subject.all.collect{|m| [m.subname, m.id]}, :selected => '41'%> 
+  
+    <%= f.text_field :Telugu %>
+</div>
+<div align="left">
+  <%= f.label :subject %>:
+  <%= f.select :subjects_id, Subject.all.collect{|m| [m.subname, m.id]}, :selected => '42'%> 
+  
+    <%= f.text_field :English %>
+</div>
+
+<div align="left">
+  <%= f.label :subject %>:
+  <%= f.select :subjects_id, Subject.all.collect{|m| [m.subname, m.id]}, :selected => '43'%> 
+  
+    <%= f.text_field :Maths %>
+</div>
+
+<div align="left">
+  <%= f.label :subject %>:
+  <%= f.select :subjects_id, Subject.all.collect{|m| [m.subname, m.id]}, :selected => '44'%> 
+  
+    <%= f.text_field :Science %>
+</div>
+
+  <%= f.submit %>  <li><%= link_to "login", :controller=> :cstudents, :action=> :studentlogin%></li>
+<% end %>
+
+
+
+
+

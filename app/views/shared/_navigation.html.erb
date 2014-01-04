@@ -1,0 +1,9 @@
+<div class="menu">
+			<ul>
+				<li><%= link_to_unless_current "login", :controller=> :cstudents, :action=> :studentlogin%></li>
+			<li><%= link_to_unless_current  'newstudent',:controller=> :cstudents, :action=> :newstudent%></li>
+			<li><%= link_to_unless_current  'listtudent',:controller=> :cstudents, :action=> :liststudent%></li>
+			<li><%= link_to_unless_current  'viewdetails',:controller=> :cstudents, :action=> :liststudent%></li>
+			<li><%= link_to_unless_current  'enterMarks',:controller=> :marks, :action=> :enter_marks_form%></li>
+			</ul>
+</div>
