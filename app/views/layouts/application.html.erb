@@ -1,128 +1,88 @@
 <!DOCTYPE html>
-<html>
-<head>
-	<meta charset="utf-8" />
-  <title>Collage:  <%= yield :title %>  </title>
-  <%= stylesheet_link_tag    "application", media: "screen" %>
-  <%= stylesheet_link_tag    "print", media: "print" %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
-  
-  <!--[if IE]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
-</head>
-<body>
-	<div id="wrapper"><!-- #wrapper -->
-	
-	
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= content_for?(:title) ? yield(:title) : "Collage" %></title>
+    <%= csrf_meta_tags %>
 
-	<header><!-- header -->
-		<div id="headerlogo" ><%= image_tag "logo-new.jpg", :alt => "test",:size => "940x50", :mouseover => image_path("colbg.png") %></div><br>
-		<h1 align="left">CollageApplication </h1>
-		<h2 align="left">Krishna's educational institute's  </h2>
-		
-	</header><!-- end of header -->
-	
-	<nav><!-- top nav -->
-		
-		<%= render partial: "shared/navigation" %>
-		</div>
-		
-	</nav><!-- end of top nav -->
-	
-	
-	
-	<section id="main"><!-- #main content and sidebar area -->
-		
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+      <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6.1/html5shiv.js" type="text/javascript"></script>
+    <![endif]-->
 
-		<section id="content"><!-- #content -->
-			
-        		
-							<h2 align="middle"><%= yield :title %>  </h2>
-							<div align="middle">
-							<%= yield %>
-							</div>
-							<img src="images/applepie.jpg" alt="" width="200" height="200" class="alignleft" >
-							
-							
-				
-						
-			</section><!-- end of #content -->
-			
-		
+    <%= stylesheet_link_tag "application", :media => "all" %>
 
-		<aside id="sidebar"><!-- sidebar -->
-				<h3>Data Services</h3>
-					<ul>
-			
-			<li><%= link_to_unless_current  'newstudent',:controller=> :cstudents, :action=> :newstudent%></li>
-			<li><%= link_to_unless_current  'listtudent',:controller=> :cstudents, :action=> :liststudent%></li>
-			<li><%= link_to_unless_current  'viewdetails',:controller=> :cstudents, :action=> :liststudent%></li>
-			<li><%= link_to_unless_current  'enterMarks',:controller=> :marks, :action=> :enter_marks_form%></li>
-			<li><%= link_to_unless_current  "login", :controller=> :cstudents, :action=> :studentlogin%></li>
-			
-					</ul>
-					
-				<h3>Sponsors</h3>
-					<%= image_tag "ad125.jpg" %><br /><%= image_tag "ad125.jpg" %><br /><br />
+    <!-- For third-generation iPad with high-resolution Retina display: -->
+    <!-- Size should be 144 x 144 pixels -->
+    <%= favicon_link_tag 'apple-touch-icon-144x144-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png', :sizes => '144x144' %>
 
-				<h3>Connect With Us</h3>
-					<ul>
-						<li><a href="#">Twitter</a></li>
-						<li><a href="#">Facebook</a></li>
-					</ul>
+    <!-- For iPhone with high-resolution Retina display: -->
+    <!-- Size should be 114 x 114 pixels -->
+    <%= favicon_link_tag 'apple-touch-icon-114x114-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png', :sizes => '114x114' %>
 
-		</aside><!-- end of sidebar -->
+    <!-- For first- and second-generation iPad: -->
+    <!-- Size should be 72 x 72 pixels -->
+    <%= favicon_link_tag 'apple-touch-icon-72x72-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png', :sizes => '72x72' %>
 
+    <!-- For non-Retina iPhone, iPod Touch, and Android 2.1+ devices: -->
+    <!-- Size should be 57 x 57 pixels -->
+    <%= favicon_link_tag 'apple-touch-icon-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png' %>
 
+    <!-- For all other devices -->
+    <!-- Size should be 32 x 32 pixels -->
+    <%= favicon_link_tag 'favicon.ico', :rel => 'shortcut icon' %>
 
-	</section><!-- end of #main content and sidebar-->
-	
-		<footer>
-		<section id="footer-area">
+    <%= javascript_include_tag "application" %>
+  </head>
+  <body>
 
-			<section id="footer-outer-block">
-					<aside class="footer-segment">
-							<h4>Friends</h4>
-								<ul>
-									<li><a href="#">one linkylink</a></li>
-									<li><a href="#">two linkylinks</a></li>
-									<li><a href="#">three linkylinks</a></li>
-								</ul>
-					</aside><!-- end of #first footer segment -->
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="btn btn-navbar" data-target=".nav-collapse" data-toggle="collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+         
+          <a class="brand" href="studentlogin">Collage</a>
+          <div class="container nav-collapse">
+            <ul class="nav">
+              <li><%= link_to "Newstudent", "/cstudents/newstudent"  %></li>
+              <li><%= link_to "List Students", "/cstudents/liststudent"  %></li>
+              <li><%= link_to "Link3", "/path3"  %></li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
 
-					<aside class="footer-segment">
-							<h4>Awesome Stuff</h4>
-								<ul>
-									<li><a href="#">one linkylink</a></li>
-									<li><a href="#">two linkylinks</a></li>
-									<li><a href="#">three linkylinks</a></li>
-								</ul>
-					</aside><!-- end of #second footer segment -->
+    <div class="container">
+        <div class="row">
+          <div class="span9">
+            <%= bootstrap_flash %>
+            <%= yield %>
+          </div>
+          <div class="span3">
+            <div class="well sidebar-nav">
+              <h3>Sidebar</h3>
+              <ul class="nav nav-list">
+                <li class="nav-header">Sidebar</li>
+                <li><%= link_to "Link1", "/path1"  %></li>
+                <li><%= link_to "Link2", "/path2"  %></li>
+                <li><%= link_to "Link3", "/path3"  %></li>
+              </ul>
+            </div><!--/.well -->
+          </div><!--/span-->
+        </div><!--/row-->
 
-					<aside class="footer-segment">
-							<h4>Coolness</h4>
-								<ul>
-									<li><a href="#">one linkylink</a></li>
-									<li><a href="#">two linkylinks</a></li>
-									<li><a href="#">three linkylinks</a></li>
-								</ul>
-					</aside><!-- end of #third footer segment -->
-					
-					<aside class="footer-segment">
-							<h4>Blahdyblah</h4>
-								<p>&copy; 2010 <a href="#">yoursite.com</a> Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. </p>
-					</aside><!-- end of #fourth footer segment -->
+      <footer>
+        <p>&copy; copi rights to laxmimayee technologies</p>
+      </footer>
 
-			</section><!-- end of footer-outer-block -->
+    </div> <!-- /container -->
 
-		</section><!-- end of footer-area -->
-	</footer>
-	
-</div><!-- #wrapper -->
-<!-- Free template created by http://freehtml5templates.com -->
-	
-
-
-
-</body>
+  </body>
 </html>

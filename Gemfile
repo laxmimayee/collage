@@ -5,6 +5,7 @@ gem 'rails', '4.0.0'
 gem 'faker'
 gem 'kaminari'
 gem 'activeadmin', github: 'gregbell/active_admin'
+gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
 
 # Use mysql as the database for Active Record
 gem 'mysql2'
