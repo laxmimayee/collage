@@ -4,10 +4,9 @@ NEW STUDENT
 
 
 <%= form_for @student, :url => "addstudent" do |f| %>
-
+<div style="margin:0;padding:0;display:inline">
 <div>
-  <%= f.label :fname %>
-  <%= f.text_field :fname %>  
+  <%= f.label :fname %>  <%= f.text_field :fname %>  
 </div>
 <div>
   <%= f.label :lname %>
@@ -74,8 +73,12 @@ NEW STUDENT
  <%= f.check_box :paid %> paid
  <%= f.check_box :paid %> yet to pay
 </div>
- <%= f.submit %>
+ <%#= f.submit  %> 
+
+ <button type="submit" class="btn btn-default">Submit</button>
 <%end%>
+
+</div>
 -------------------------------------------------------
 <div>
 #using form tags

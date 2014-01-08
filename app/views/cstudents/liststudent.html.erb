@@ -36,9 +36,8 @@
           <% else %>
           <td>Not Available</td>
           <% end %>
-	  
-	  
-	  <td><%= link_to 'View Details', :controller=> :cstudents,
+
+	  <td ><%= link_to 'View Details', :controller=> :cstudents,
 	  :action => :view_details, :id => student.id %></td>
 	  
 	  <td><%= link_to 'Delete Details', :controller=> :cstudents,

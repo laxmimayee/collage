@@ -47,14 +47,28 @@
             <span class="icon-bar"></span>
           </a>
          
-          <a class="brand" href="studentlogin">Collage</a>
-          <div class="container nav-collapse">
-            <ul class="nav">
-              <li><%= link_to "Newstudent", "/cstudents/newstudent"  %></li>
-              <li><%= link_to "List Students", "/cstudents/liststudent"  %></li>
-              <li><%= link_to "Link3", "/path3"  %></li>
-            </ul>
-          </div><!--/.nav-collapse -->
+          
+             <div class="dropdown">
+               <a class="brand", href= "/cstudents/studentlogin"  >Collage</a>
+  <button class="btn dropdown-toggle sr-only" type="button" id="dropdownMenu1" data-toggle="dropdown">
+    Dropdown
+    <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+    <li role="presentation" ><a role="menuitem" tabindex="-1" href="/cstudents/newstudent">New Student</a></li>
+    <li role="presentation" ><a role="menuitem" tabindex="-1" href="/cstudents/liststudent">ListStudents</a></li>
+    
+    <li><%= link_to "studentlogin", cstudents_studentlogin_path %></li>
+  </ul>
+
+</div>
+
+
+
+
+
+
+
         </div>
       </div>
     </div>
